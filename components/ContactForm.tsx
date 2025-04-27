@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { DatePicker } from "./DatePicker";
+// import { DatePicker } from "./DatePicker";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 
@@ -29,7 +29,7 @@ export const ContactForm = () => {
       <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
         <CardContent className="p-6 md:p-8 w-full max-w-lg">
           <p className="text-center text-lg font-bold capitalize text-white">
-            You've questions we've got Answers
+            You&apos;ve questions we&apos;ve got Answers
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 text-white">
             Get a Free Custom Quote

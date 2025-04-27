@@ -12,7 +12,7 @@ export const HeroSection = () => {
           </h1>
           <p className="mt-4 text-base md:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0">
             Experience the joy of a professional cleaning. Schedule a
-            hassle-free service today and let us restore your home's shine!
+            hassle-free service today and let us restore your home&apos;s shine!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
             <Button

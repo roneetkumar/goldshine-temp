@@ -10,7 +10,7 @@ export const FAQ = () => {
     <section className="py-12 px-4 text-center bg-[#F9F7FC] min-h-screen flex flex-col justify-center">
       <div className="max-w-6xl mx-auto w-full">
         <p className="text-[#9569F2] text-lg font-bold capitalize">
-          You've questions we've got Answers
+          You&apos;ve questions we&apos;ve got Answers
         </p>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
           Frequently Asked Questions
@@ -55,7 +55,7 @@ export const FAQ = () => {
             <AccordionContent className="pb-4 text-base text-gray-700">
               You can easily schedule a cleaning service by filling out our
               online form, calling our customer service, or sending us an email.
-              We'll respond promptly to arrange a convenient time.
+              We&apos;ll respond promptly to arrange a convenient time.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
