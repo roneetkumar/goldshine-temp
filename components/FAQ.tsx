@@ -7,7 +7,7 @@ import {
 
 export const FAQ = () => {
   return (
-    <section className="py-12 px-4 text-center bg-[#F9F7FC] min-h-screen flex flex-col justify-center">
+    <section className="py-8 md:py-20 px-4 text-center bg-[#F9F7FC] flex flex-col justify-center">
       <div className="max-w-6xl mx-auto w-full">
         <p className="text-[#9569F2] text-lg font-bold capitalize">
           You&apos;ve questions we&apos;ve got Answers

@@ -22,9 +22,7 @@ type Review = {
 };
 
 export const Testimonials = () => {
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  );
+  const plugin = React.useRef(Autoplay({ delay: 4000 }));
 
   const [reviews, setReviews] = React.useState<Review[]>([]);
 
@@ -33,9 +31,8 @@ export const Testimonials = () => {
       try {
         const response = await fetch("/api");
         const data = await response.json();
-        // console.log(data);
 
-        setReviews((data.result.reviews as Review[]) || []);
+        setReviews((data?.result?.reviews as Review[]) || []);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       }
@@ -45,7 +42,7 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-12 px-0 text-center border-b-2 min-h-screen flex flex-col justify-center">
+    <section className="md:py-20 py-8 px-0 text-center border-b-2 flex flex-col justify-center">
       <div className="max-w-full mx-0 w-screen">
         <p className="text-[#9569F2] text-lg font-bold capitalize">
           What People Are Saying
@@ -67,9 +64,9 @@ export const Testimonials = () => {
               {reviews.map((review, index) => (
                 <CarouselItem
                   key={index}
-                  className="md:basis-1/2 lg:basis-1/3 p-2"
+                  className="md:basis-1/2 lg:basis-1/3 p-2 max-w-[400px]"
                 >
-                  <Card className="bg-[#F5F0FF] h-full shadow-none border-none">
+                  <Card className="bg-[#F5F0FF] h-full  shadow-none border-none">
                     <CardContent className="p-6 text-left h-full flex flex-col gap-4">
                       <p className="italic text-gray-700 flex-grow text-base">
                         {review.text.slice(0, 200).concat(" ...")}

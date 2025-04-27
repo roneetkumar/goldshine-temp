@@ -68,7 +68,7 @@ export const QuoteEstimator = () => {
   return (
     <div
       id="quote"
-      className="w-full bg-[#F9F7FC] border-2 min-h-screen flex flex-col justify-center items-center py-16"
+      className="w-full px-4 bg-[#F9F7FC] border-b-2 flex flex-col justify-center items-center py-8 md:py-20"
     >
       <div className="text-center mb-8">
         <p className="text-[#9569F2] text-lg font-bold capitalize">

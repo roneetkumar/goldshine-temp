@@ -49,7 +49,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 bg-gray-50 text-center text-[#11024D]">
+    <section className="py-8 md:py-20 bg-gray-50 border-b-2 text-center text-[#11024D]">
       <div className="text-center mb-12">
         <p className="text-[#9569F2] text-lg font-bold">
           What We Can Do For You

@@ -24,10 +24,10 @@ export const ContactForm = () => {
   return (
     <section
       id="contact"
-      className="py-12 px-4 mx-auto bg-[#11024D] rounded-t-3xl min-h-screen flex flex-col justify-center"
+      className="md:py-20 py-8 px-4 mx-auto bg-[#11024D] rounded-t-3xl flex flex-col justify-center"
     >
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
-        <CardContent className="p-6 md:p-8 w-full max-w-lg">
+      <div className="flex flex-col items-center justify-center w-full max-w-xl mx-auto">
+        <CardContent className="p-0 w-full">
           <p className="text-center text-lg font-bold capitalize text-white">
             You&apos;ve questions we&apos;ve got Answers
           </p>

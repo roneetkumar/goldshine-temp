@@ -3,14 +3,12 @@ import DummyImage from "../public/AboutImage.png";
 
 export const AboutUs = () => {
   return (
-    <section className="py-12 px-4 border-b-2 min-h-screen flex items-center">
+    <section className="py-8 md:py-20 px-4 border-b-2 flex items-center">
       <div className="flex flex-col lg:flex-row gap-8 justify-evenly items-center max-w-6xl mx-auto">
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="max-w-[400px] w-100% lg:w-1/2 flex justify-center">
           <Image
             src={DummyImage}
             alt="Professional Cleaning"
-            width={500}
-            height={475}
             className="max-w-full h-auto md:order-first order-last"
           />
         </div>
