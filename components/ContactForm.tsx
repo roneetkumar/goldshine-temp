@@ -120,7 +120,7 @@ export const ContactForm = () => {
             </div>
 
             <div className="space-y-2 bg-white rounded-lg py-1 my-2 flex items-center">
-              <DatePicker />
+              {/* <DatePicker /> */}
             </div>
             <div className="space-y-2">
               <Textarea
