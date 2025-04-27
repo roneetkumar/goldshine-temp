@@ -4,7 +4,7 @@ import DummyImage from "../public/Hero2.png";
 
 export const HeroSection = () => {
   return (
-    <section className="text-[#11024D] py-6 md:py-12 w-full flex flex-col items-center px-4 sm:px-6 md:px-8 border-b-2 min-h-screen justify-center">
+    <section className="text-[#11024D] py-6 md:py-0 w-full flex flex-col items-center px-4 sm:px-6 md:px-8 border-b-2 min-h-screen justify-center">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8 w-full max-w-6xl mx-auto">
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">

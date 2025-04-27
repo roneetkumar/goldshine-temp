@@ -56,9 +56,9 @@ export const OurWork = () => {
                       src={image.src}
                       alt={image.alt}
                       width={600}
-                      height={250} // Reduce the height of the cards here
+                      height={250}
                       className="w-full h-[250px] object-cover"
-                      style={{ objectPosition: "bottom" }} // Crop the top of the image
+                      style={{ objectPosition: "bottom " }}
                     />
                   </CardContent>
                 </Card>

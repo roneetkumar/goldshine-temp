@@ -118,11 +118,11 @@ export const ContactForm = () => {
                 </Select>
               </div>
             </div>
-
+            {/* 
             <div className="space-y-2 bg-white rounded-lg py-1 my-2 flex items-center">
-              {/* <DatePicker /> */}
-            </div>
-            <div className="space-y-2">
+              <DatePicker />
+            </div> */}
+            <div className="space-y-2 bg-white rounded-lg  my-2 flex items-center">
               <Textarea
                 id="message"
                 placeholder="Tell us more... (optional)"

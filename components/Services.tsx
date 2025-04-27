@@ -1,6 +1,13 @@
 "use client";
 
-import { House, Truck, Building, Toolbox, Broom } from "@phosphor-icons/react";
+import {
+  House,
+  Truck,
+  Building,
+  Toolbox,
+  Broom,
+  SprayBottle,
+} from "@phosphor-icons/react";
 
 const services = [
   {
@@ -30,6 +37,13 @@ const services = [
     title: "Commercial",
     description: "Professional cleaning solutions for businesses and offices",
     icon: Building,
+  },
+  {
+    title: "Glass Cleaning ",
+    description:
+      "Expert cleaning for windows and glass surfaces, leaving them streak-free and sparkling.",
+
+    icon: SprayBottle,
   },
 ];
 
