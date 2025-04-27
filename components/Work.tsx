@@ -11,9 +11,7 @@ import Carousel4 from "../public/Carousel4.png";
 
 // Define your images array
 const workImages = [
-  { src: Carousel4, alt: "Before and After 4" },
   { src: Carousel1, alt: "Before and After 1" },
-  { src: Carousel4, alt: "Before and After 4" },
   { src: Carousel2, alt: "Before and After 2" },
   { src: Carousel4, alt: "Before and After 4" },
 ];
