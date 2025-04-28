@@ -44,7 +44,7 @@ export const QuoteEstimator = () => {
     }
 
     // Adjust price based on area (e.g., $0.10 per sq. ft.)
-    const priceByArea = area * 0.1;
+    const priceByArea = area * 0.24;
 
     // Adjust price based on frequency (e.g., discount for weekly/bi-weekly/monthly)
     let frequencyDiscount = 0;
@@ -123,6 +123,7 @@ export const QuoteEstimator = () => {
                   <Slider
                     min={100}
                     max={4000}
+                    step={50}
                     value={[area]}
                     onValueChange={([value]) => setArea(value)}
                     className="w-full"

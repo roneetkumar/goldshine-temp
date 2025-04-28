@@ -6,7 +6,7 @@ import { TiktokLogo, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
 export const Footer = () => {
   return (
     <footer className="bg-[#11024D] w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-20 bg-white rounded-t-2xl">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-8 bg-white rounded-t-2xl">
         <div className="flex flex-col md:flex-row gap-8 justify-between">
           <div className="space-y-4">
             <Image
@@ -51,10 +51,7 @@ export const Footer = () => {
                   <a href="tel:+19024766652">+1 (902) 476-6652</a>
                 </li>
                 <li className="text-base hover:underline">
-                  <a
-                    href="mailto:goldshinecleaning.inc@gmail.com
-"
-                  >
+                  <a href="mailto:goldshinecleaning.inc@gmail.com">
                     goldshinecleaning.inc@gmail.com
                   </a>
                 </li>
