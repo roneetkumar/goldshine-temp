@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Broom,
   Envelope,
@@ -16,11 +17,62 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { toast } from "sonner";
+
 // import { DatePicker } from "./DatePicker";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 export const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = {
+      fullName: (form.elements.namedItem("full-name") as HTMLInputElement)
+        ?.value,
+      address: (form.elements.namedItem("address") as HTMLInputElement)?.value,
+      email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
+      service: (form.elements.namedItem("service") as HTMLInputElement)?.value,
+      frequency: (form.elements.namedItem("frequency") as HTMLInputElement)
+        ?.value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        ?.value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        // Replace alert with toast notification
+        toast.success("Message sent successfully!");
+        form.reset();
+      } else {
+        // Show error toast
+        toast.error("Failed to send message.");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      // Show error toast on catch
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -35,7 +87,7 @@ export const ContactForm = () => {
             Get a Free Custom Quote
           </h2>
 
-          <form className="mx-auto">
+          <form onSubmit={handleSubmit} className="mx-auto">
             <div className="py-1 flex items-center bg-white rounded-lg px-2 my-2 gap-2">
               <IdentificationCard size={24} />
               <Input
@@ -131,10 +183,11 @@ export const ContactForm = () => {
             </div>
             <Button
               type="submit"
+              disabled={loading}
               className="text-base w-full mt-2 py-4 hover:bg-[#9569F2] hover:text-white border-none"
               variant={"roundedSecondary"}
             >
-              Get Free Quote
+              {loading ? "Sending..." : "Get Free Quote"}
             </Button>
           </form>
         </CardContent>
