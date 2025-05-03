@@ -45,7 +45,7 @@ export const OurWork = () => {
               {workImages.map((image, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-[80%] max-w-[700px] p-2"
+                  className="basis-[80%] max-w-[700px] px-2"
                 >
                   <Card className="overflow-hidden shadow-none rounded-xl border-none">
                     <CardContent className="p-0">
