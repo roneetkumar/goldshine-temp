@@ -45,6 +45,22 @@ export const ContactForm = () => {
         ?.value,
     };
 
+    // Simple client-side validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^[0-9+\-()]*\d{10,15}[0-9]*$/;
+
+    if (!emailPattern.test(data.email)) {
+      toast.error("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
+    if (!phonePattern.test(data.phone)) {
+      toast.error("Please enter a valid phone number.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -57,16 +73,13 @@ export const ContactForm = () => {
       const result = await res.json();
 
       if (result.success) {
-        // Replace alert with toast notification
         toast.success("Message sent successfully!");
         form.reset();
       } else {
-        // Show error toast
         toast.error("Failed to send message.");
       }
     } catch (err) {
       console.error("Error:", err);
-      // Show error toast on catch
       toast.error("Something went wrong.");
     } finally {
       setLoading(false);
@@ -93,6 +106,7 @@ export const ContactForm = () => {
               <Input
                 id="full-name"
                 placeholder="Full name"
+                required
                 className="text-base w-full border-none focus-visible:ring-0 shadow-none p-0 m-0"
               />
             </div>
@@ -102,6 +116,7 @@ export const ContactForm = () => {
                 id="address"
                 placeholder="Address / Postal Code"
                 type="text"
+                required
                 className="text-base w-full border-none focus-visible:ring-0 shadow-none p-0 m-0"
               />
             </div>
@@ -111,6 +126,8 @@ export const ContactForm = () => {
                 <Input
                   id="email"
                   placeholder="Email"
+                  type="email"
+                  required
                   className="text-base w-full border-none focus-visible:ring-0 shadow-none p-0 m-0"
                 />
               </div>
@@ -120,6 +137,7 @@ export const ContactForm = () => {
                   id="phone"
                   placeholder="Phone"
                   type="tel"
+                  required
                   className="text-base w-full border-none focus-visible:ring-0 shadow-none p-0 m-0"
                 />
               </div>
@@ -127,7 +145,7 @@ export const ContactForm = () => {
 
             <div className="flex flex-col sm:flex-row gap-2 w-full">
               <div className="bg-white rounded-lg py-1 basis-3/5">
-                <Select>
+                <Select required>
                   <SelectTrigger
                     id="service"
                     className="shadow-none border-none focus:ring-0 focus:ring-transparent text-sm"
@@ -153,10 +171,10 @@ export const ContactForm = () => {
                 </Select>
               </div>
               <div className="bg-white rounded-lg py-1 flex-1">
-                <Select>
+                <Select required>
                   <SelectTrigger
                     id="frequency"
-                    className=" shadow-none border-none focus:ring-0 focus:ring-transparent text-sm "
+                    className="shadow-none border-none focus:ring-0 focus:ring-transparent text-sm"
                   >
                     <Repeat size={24} />
                     <SelectValue placeholder="Select frequency" />
@@ -170,11 +188,7 @@ export const ContactForm = () => {
                 </Select>
               </div>
             </div>
-            {/* 
-            <div className="space-y-2 bg-white rounded-lg py-1 my-2 flex items-center">
-              <DatePicker />
-            </div> */}
-            <div className="space-y-2 bg-white rounded-lg  my-2 flex items-center">
+            <div className="space-y-2 bg-white rounded-lg my-2 flex items-center">
               <Textarea
                 id="message"
                 placeholder="Tell us more... (optional)"

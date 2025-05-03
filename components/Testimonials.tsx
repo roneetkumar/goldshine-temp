@@ -42,8 +42,8 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section className="md:py-20 py-8 px-0 text-center border-b-2 flex flex-col justify-center">
-      <div className="max-w-full mx-0 w-screen">
+    <section className="md:py-20 py-8 px-0 text-center border-b-2 flex flex-col justify-center ">
+      <div className="max-w-6xl mx-auto w-full">
         <p className="text-[#9569F2] text-lg font-bold capitalize">
           What People Are Saying
         </p>
